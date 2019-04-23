@@ -13,18 +13,17 @@ public class ImageFilter extends FileFilter {
         }
 
         String extension = Utils.getExtension(f);
+        boolean result = false;
 	if (extension != null) {
-            if (extension.equals(Utils.png) ||
-                extension.equals(Utils.gif) ||
-                extension.equals(Utils.jpeg) ||
-                extension.equals(Utils.jpg)) {
-                    return true;
-            } else {
-                return false;
-            }
-    	}
-
-        return false;
+		boolean png = extension.equals(Utils.png);
+		boolean gif = extension.equals(Utils.gif);
+		boolean jpeg = extension.equals(Utils.jpeg);
+		boolean jpg = extension.equals(Utils.jpg);
+		
+		result = png || gif || jpeg || jpg;
+        return result;
+    }
+	return false;
     }
 
     // The description of this filter
