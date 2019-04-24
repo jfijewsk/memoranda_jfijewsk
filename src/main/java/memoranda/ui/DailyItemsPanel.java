@@ -22,17 +22,6 @@ import javax.swing.JToolBar;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
-import interfaces.DateListener;
-import interfaces.EventNotificationListener;
-import interfaces.HistoryListener;
-import interfaces.Note;
-import interfaces.NoteList;
-import interfaces.NoteListener;
-import interfaces.Project;
-import interfaces.ProjectListener;
-import interfaces.ResourcesList;
-import interfaces.Task;
-import interfaces.TaskList;
 import main.java.memoranda.CurrentNote;
 import main.java.memoranda.CurrentProject;
 import main.java.memoranda.EventsScheduler;
@@ -40,6 +29,17 @@ import main.java.memoranda.History;
 import main.java.memoranda.HistoryItem;
 import main.java.memoranda.date.CalendarDate;
 import main.java.memoranda.date.CurrentDate;
+import main.java.memoranda.interfaces.DateListener;
+import main.java.memoranda.interfaces.EventNotificationListener;
+import main.java.memoranda.interfaces.HistoryListener;
+import main.java.memoranda.interfaces.Note;
+import main.java.memoranda.interfaces.NoteList;
+import main.java.memoranda.interfaces.NoteListener;
+import main.java.memoranda.interfaces.Project;
+import main.java.memoranda.interfaces.ProjectListener;
+import main.java.memoranda.interfaces.ResourcesList;
+import main.java.memoranda.interfaces.Task;
+import main.java.memoranda.interfaces.TaskList;
 import main.java.memoranda.util.CurrentStorage;
 import main.java.memoranda.util.Local;
 import main.java.memoranda.util.Util;
@@ -280,7 +280,7 @@ public class DailyItemsPanel extends JPanel {
         });
 
         EventsScheduler.addListener(new EventNotificationListener() {
-            public void eventIsOccured(interfaces.Event ev) {
+            public void eventIsOccured(main.java.memoranda.interfaces.Event ev) {
                 /*DEBUG*/
                 System.out.println(ev.getTimeString() + " " + ev.getText());
                 updateIndicators();
@@ -432,7 +432,7 @@ public class DailyItemsPanel extends JPanel {
                     net.sf.memoranda.Event ev = (net.sf.memoranda.Event)it.next();   
                     evlist += ev.getTimeString()+" - "+ev.getText()+"\n";
                 } */
-                interfaces.Event ev = EventsScheduler.getFirstScheduledEvent();
+                main.java.memoranda.interfaces.Event ev = EventsScheduler.getFirstScheduledEvent();
                 alarmB.setToolTipText(ev.getTimeString() + " - " + ev.getText());
                 indicatorsPanel.add(alarmB, null);
             }

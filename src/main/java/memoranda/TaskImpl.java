@@ -11,11 +11,11 @@ package main.java.memoranda;
 import java.util.Collection;
 import java.util.Vector;
 
-import interfaces.Project;
-import interfaces.Task;
-import interfaces.TaskList;
 import main.java.memoranda.date.CalendarDate;
 import main.java.memoranda.date.CurrentDate;
+import main.java.memoranda.interfaces.Project;
+import main.java.memoranda.interfaces.Task;
+import main.java.memoranda.interfaces.TaskList;
 
 import java.util.Calendar;
 
@@ -136,7 +136,7 @@ public class TaskImpl implements Task, Comparable {
     }
 
     /**s
-     * @see interfaces.Task#getStatus()
+     * @see main.java.memoranda.interfaces.Task#getStatus()
      */
     public int getStatus(CalendarDate date) {
         CalendarDate start = getStartDate();
@@ -187,14 +187,14 @@ public class TaskImpl implements Task, Comparable {
     }
 
     /**
-     * @see interfaces.Task#getID()
+     * @see main.java.memoranda.interfaces.Task#getID()
      */
     public String getID() {
         return _element.getAttribute("id").getValue();
     }
 
     /**
-     * @see interfaces.Task#getText()
+     * @see main.java.memoranda.interfaces.Task#getText()
      */
     public String getText() {
         return _element.getFirstChildElement("text").getValue();
@@ -205,7 +205,7 @@ public class TaskImpl implements Task, Comparable {
     }
     
     /**
-     * @see interfaces.Task#setText()
+     * @see main.java.memoranda.interfaces.Task#setText()
      */
     public void setText(String s) {
         _element.getFirstChildElement("text").removeChildren();
@@ -213,14 +213,14 @@ public class TaskImpl implements Task, Comparable {
     }
 
     /**
-     * @see interfaces.Task#freeze()
+     * @see main.java.memoranda.interfaces.Task#freeze()
      */
     public void freeze() {
         setAttr("frozen", "yes");
     }
 
     /**
-     * @see interfaces.Task#unfreeze()
+     * @see main.java.memoranda.interfaces.Task#unfreeze()
      */
     public void unfreeze() {
         if (this.isFrozen())
@@ -228,7 +228,7 @@ public class TaskImpl implements Task, Comparable {
     }
 
     /**
-     * @see interfaces.Task#getDependsFrom()
+     * @see main.java.memoranda.interfaces.Task#getDependsFrom()
      */
     public Collection getDependsFrom() {
         Vector v = new Vector();
@@ -242,7 +242,7 @@ public class TaskImpl implements Task, Comparable {
         return v;
     }
     /**
-     * @see interfaces.Task#addDependsFrom(interfaces.Task)
+     * @see main.java.memoranda.interfaces.Task#addDependsFrom(main.java.memoranda.interfaces.Task)
      */
     public void addDependsFrom(Task task) {
         Element dep = new Element("dependsFrom");
@@ -250,7 +250,7 @@ public class TaskImpl implements Task, Comparable {
         _element.appendChild(dep);
     }
     /**
-     * @see interfaces.Task#removeDependsFrom(interfaces.Task)
+     * @see main.java.memoranda.interfaces.Task#removeDependsFrom(main.java.memoranda.interfaces.Task)
      */
     public void removeDependsFrom(Task task) {
         Elements deps = _element.getChildElements("dependsFrom");
@@ -263,20 +263,20 @@ public class TaskImpl implements Task, Comparable {
         }
     }
     /**
-     * @see interfaces.Task#getProgress()
+     * @see main.java.memoranda.interfaces.Task#getProgress()
      */
     public int getProgress() {
         return new Integer(_element.getAttribute("progress").getValue()).intValue();
     }
     /**
-     * @see interfaces.Task#setProgress(int)
+     * @see main.java.memoranda.interfaces.Task#setProgress(int)
      */
     public void setProgress(int p) {
         if ((p >= 0) && (p <= 100))
             setAttr("progress", new Integer(p).toString());
     }
     /**
-     * @see interfaces.Task#getPriority()
+     * @see main.java.memoranda.interfaces.Task#getPriority()
      */
     public int getPriority() {
         Attribute pa = _element.getAttribute("priority");
@@ -285,7 +285,7 @@ public class TaskImpl implements Task, Comparable {
         return new Integer(pa.getValue()).intValue();
     }
     /**
-     * @see interfaces.Task#setPriority(int)
+     * @see main.java.memoranda.interfaces.Task#setPriority(int)
      */
     public void setPriority(int p) {
         setAttr("priority", String.valueOf(p));
@@ -319,7 +319,7 @@ public class TaskImpl implements Task, Comparable {
 	}
 
     /**
-     * @see interfaces.Task#getRate()
+     * @see main.java.memoranda.interfaces.Task#getRate()
      */
 	 
      public long getRate() {

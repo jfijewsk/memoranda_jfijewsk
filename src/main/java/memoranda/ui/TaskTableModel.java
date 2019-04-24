@@ -23,11 +23,11 @@ package main.java.memoranda.ui;
 import javax.swing.event.*;
 import javax.swing.tree.TreePath;
 
-import interfaces.Project;
-import interfaces.Task;
-import interfaces.TreeTableModel;
 import main.java.memoranda.*;
 import main.java.memoranda.date.CurrentDate;
+import main.java.memoranda.interfaces.Project;
+import main.java.memoranda.interfaces.Task;
+import main.java.memoranda.interfaces.TreeTableModel;
 import main.java.memoranda.ui.treetable.AbstractTreeTableModel;
 import main.java.memoranda.util.Context;
 import main.java.memoranda.util.Local;
@@ -62,21 +62,21 @@ public class TaskTableModel extends AbstractTreeTableModel implements TreeTableM
     }
 
     /**
-     * @see interfaces.TreeTableModel#getColumnCount()
+     * @see main.java.memoranda.interfaces.TreeTableModel#getColumnCount()
      */
     public int getColumnCount() {
         return columnNames.length;
     }
 
     /**
-     * @see interfaces.TreeTableModel#getColumnName(int)
+     * @see main.java.memoranda.interfaces.TreeTableModel#getColumnName(int)
      */
     public String getColumnName(int column) {
         return columnNames[column];
     }
 
     /**
-     * @see interfaces.TreeTableModel#getValueAt(java.lang.Object,
+     * @see main.java.memoranda.interfaces.TreeTableModel#getValueAt(java.lang.Object,
      *      int)
      */
     public Object getValueAt(Object node, int column) {
@@ -174,7 +174,7 @@ public class TaskTableModel extends AbstractTreeTableModel implements TreeTableM
     }
 
     /**
-     * @see interfaces.TreeTableModel#getColumnClass(int)
+     * @see main.java.memoranda.interfaces.TreeTableModel#getColumnClass(int)
      */
     public Class getColumnClass(int column) {
         try {

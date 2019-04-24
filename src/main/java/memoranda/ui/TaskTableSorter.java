@@ -4,10 +4,10 @@ import javax.swing.*;
 import javax.swing.table.*;
 import javax.swing.tree.*;
 
-import interfaces.Project;
-import interfaces.Task;
 import main.java.memoranda.*;
 import main.java.memoranda.date.*;
+import main.java.memoranda.interfaces.Project;
+import main.java.memoranda.interfaces.Task;
 import main.java.memoranda.util.*;
 
 import javax.swing.event.*;

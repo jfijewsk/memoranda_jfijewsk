@@ -1,4 +1,4 @@
-package interfaces;
+package main.java.memoranda.interfaces;
 /*
  * TreeTableModel.java
  *

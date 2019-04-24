@@ -8,9 +8,9 @@
  */
 package main.java.memoranda;
 
-import interfaces.Note;
-import interfaces.Project;
 import main.java.memoranda.date.CalendarDate;
+import main.java.memoranda.interfaces.Note;
+import main.java.memoranda.interfaces.Project;
 import nu.xom.Attribute;
 import nu.xom.Element;
 
@@ -32,7 +32,7 @@ public class NoteImpl implements Note, Comparable {
     }
 
     /**
-     * @see interfaces.Note#getDate()
+     * @see main.java.memoranda.interfaces.Note#getDate()
      */
     public CalendarDate getDate() {
 		Element day = (Element)_el.getParent();
@@ -51,7 +51,7 @@ public class NoteImpl implements Note, Comparable {
         return _project;
     }
     /**
-     * @see interfaces.Note#getTitle()
+     * @see main.java.memoranda.interfaces.Note#getTitle()
      */
     public String getTitle() {
         Attribute ta = _el.getAttribute("title");
@@ -59,7 +59,7 @@ public class NoteImpl implements Note, Comparable {
         return _el.getAttribute("title").getValue();
     }
     /**
-     * @see interfaces.Note#setTitle(java.lang.String)
+     * @see main.java.memoranda.interfaces.Note#setTitle(java.lang.String)
      */
     public void setTitle(String s) {
         Attribute ta = _el.getAttribute("title");
@@ -69,7 +69,7 @@ public class NoteImpl implements Note, Comparable {
     }
 	
 	/**
-     * @see interfaces.Note#getId
+     * @see main.java.memoranda.interfaces.Note#getId
      */
 	
 	public String getId() {
@@ -79,7 +79,7 @@ public class NoteImpl implements Note, Comparable {
 	}
 	
 	/**
-     * @see interfaces.Note#setId(java.lang.String)
+     * @see main.java.memoranda.interfaces.Note#setId(java.lang.String)
      */
 	 
 	public void setId(String s) {
@@ -87,13 +87,13 @@ public class NoteImpl implements Note, Comparable {
 		if(id==null) _el.addAttribute(new Attribute("refid", s));
 	}
     /**
-     * @see interfaces.Note#isMarked()
+     * @see main.java.memoranda.interfaces.Note#isMarked()
      */
     public boolean isMarked() {
         return _el.getAttribute("bookmark") != null;        
     }
     /**
-     * @see interfaces.Note#setMark(boolean)
+     * @see main.java.memoranda.interfaces.Note#setMark(boolean)
      */
     public void setMark(boolean mark) {
         Attribute ma = _el.getAttribute("bookmark");        

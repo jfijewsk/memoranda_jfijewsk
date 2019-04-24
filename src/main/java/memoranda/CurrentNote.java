@@ -3,8 +3,8 @@ package main.java.memoranda;
 import java.util.Collection;
 import java.util.Vector;
 
-import interfaces.Note;
-import interfaces.NoteListener;
+import main.java.memoranda.interfaces.Note;
+import main.java.memoranda.interfaces.NoteListener;
 
 public class CurrentNote {
 

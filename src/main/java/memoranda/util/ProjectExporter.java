@@ -11,11 +11,11 @@ import java.util.Collections;
 
 import javax.swing.text.html.HTMLDocument;
 
-import interfaces.Note;
-import interfaces.NoteList;
-import interfaces.Project;
 import main.java.memoranda.*;
 import main.java.memoranda.date.CalendarDate;
+import main.java.memoranda.interfaces.Note;
+import main.java.memoranda.interfaces.NoteList;
+import main.java.memoranda.interfaces.Project;
 import main.java.memoranda.ui.*;
 import main.java.memoranda.ui.htmleditor.AltHTMLWriter;
 

@@ -18,7 +18,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.tree.TreePath;
 
-import interfaces.TreeTableModel;
+import main.java.memoranda.interfaces.TreeTableModel;
 
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeExpansionListener;

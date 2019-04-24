@@ -10,8 +10,8 @@ package main.java.memoranda;
 
 import java.util.Vector;
 
-import interfaces.Project;
-import interfaces.ResourcesList;
+import main.java.memoranda.interfaces.Project;
+import main.java.memoranda.interfaces.ResourcesList;
 import main.java.memoranda.util.Util;
 
 import java.io.File;
@@ -55,7 +55,7 @@ public class ResourcesListImpl implements ResourcesList {
     }
 
     /**
-     * @see interfaces.ResourcesList#getResource(java.lang.String)
+     * @see main.java.memoranda.interfaces.ResourcesList#getResource(java.lang.String)
      */
     public Resource getResource(String path) {
         Elements rs = _root.getChildElements("resource");
@@ -77,7 +77,7 @@ public class ResourcesListImpl implements ResourcesList {
     }*/
     
     /**
-     * @see interfaces.ResourcesList#addResource(java.lang.String, boolean)
+     * @see main.java.memoranda.interfaces.ResourcesList#addResource(java.lang.String, boolean)
      */
     public void addResource(String path, boolean isInternetShortcut, boolean isProjectFile) {
         Element el = new Element("resource");
@@ -95,7 +95,7 @@ public class ResourcesListImpl implements ResourcesList {
     }
 
     /**
-     * @see interfaces.ResourcesList#removeResource(java.lang.String)
+     * @see main.java.memoranda.interfaces.ResourcesList#removeResource(java.lang.String)
      */
     public void removeResource(String path) {
         Elements rs = _root.getChildElements("resource");
@@ -112,13 +112,13 @@ public class ResourcesListImpl implements ResourcesList {
         
 
     /**
-     * @see interfaces.ResourcesList#getAllResourcesCount()
+     * @see main.java.memoranda.interfaces.ResourcesList#getAllResourcesCount()
      */
     public int getAllResourcesCount() {
         return _root.getChildElements("resource").size();
     }
     /**
-     * @see interfaces.ResourcesList#getXMLContent()
+     * @see main.java.memoranda.interfaces.ResourcesList#getXMLContent()
      */
     public Document getXMLContent() {
         return _doc;

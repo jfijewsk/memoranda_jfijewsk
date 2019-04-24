@@ -30,7 +30,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JLabel;
 
-import interfaces.Task;
+import main.java.memoranda.interfaces.Task;
 
 /**
  * <h1>TaskProgressLabel</h1>

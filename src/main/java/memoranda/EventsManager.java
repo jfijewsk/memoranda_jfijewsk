@@ -13,8 +13,8 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Vector;
 
-import interfaces.Event;
 import main.java.memoranda.date.CalendarDate;
+import main.java.memoranda.interfaces.Event;
 import main.java.memoranda.util.CurrentStorage;
 import main.java.memoranda.util.Util;
 

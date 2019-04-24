@@ -25,14 +25,14 @@ import javax.swing.border.Border;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import interfaces.NoteList;
-import interfaces.Project;
-import interfaces.ProjectListener;
-import interfaces.ResourcesList;
-import interfaces.TaskList;
 import main.java.memoranda.CurrentProject;
 import main.java.memoranda.date.CalendarDate;
 import main.java.memoranda.date.CurrentDate;
+import main.java.memoranda.interfaces.NoteList;
+import main.java.memoranda.interfaces.Project;
+import main.java.memoranda.interfaces.ProjectListener;
+import main.java.memoranda.interfaces.ResourcesList;
+import main.java.memoranda.interfaces.TaskList;
 import main.java.memoranda.util.Local;
 
 /**

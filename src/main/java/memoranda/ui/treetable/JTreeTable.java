@@ -18,8 +18,8 @@ import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.tree.*;
 
-import interfaces.Task;
-import interfaces.TreeTableModel;
+import main.java.memoranda.interfaces.Task;
+import main.java.memoranda.interfaces.TreeTableModel;
 
 import javax.swing.table.*;
 

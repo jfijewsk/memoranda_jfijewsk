@@ -47,16 +47,16 @@ import javax.swing.event.*;
 import javax.swing.table.*;
 import javax.swing.tree.*;
 
-import interfaces.DateListener;
-import interfaces.NoteList;
-import interfaces.Project;
-import interfaces.ProjectListener;
-import interfaces.ResourcesList;
-import interfaces.TaskList;
-import interfaces.TreeTableModel;
 import main.java.memoranda.*;
 import main.java.memoranda.date.CalendarDate;
 import main.java.memoranda.date.CurrentDate;
+import main.java.memoranda.interfaces.DateListener;
+import main.java.memoranda.interfaces.NoteList;
+import main.java.memoranda.interfaces.Project;
+import main.java.memoranda.interfaces.ProjectListener;
+import main.java.memoranda.interfaces.ResourcesList;
+import main.java.memoranda.interfaces.TaskList;
+import main.java.memoranda.interfaces.TreeTableModel;
 import main.java.memoranda.ui.treetable.*;
 import main.java.memoranda.util.*;
 

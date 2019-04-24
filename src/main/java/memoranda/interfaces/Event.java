@@ -7,7 +7,7 @@
  * Copyright (c) 2003 Memoranda Team. http://memoranda.sf.net
  *-----------------------------------------------------
  */
-package interfaces;
+package main.java.memoranda.interfaces;
 import java.util.Date;
 
 import main.java.memoranda.date.CalendarDate;

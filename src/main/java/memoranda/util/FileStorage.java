@@ -19,18 +19,18 @@ import java.net.URL;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 
-import interfaces.Note;
-import interfaces.NoteList;
-import interfaces.Project;
-import interfaces.ResourcesList;
-import interfaces.Storage;
-import interfaces.TaskList;
 import main.java.memoranda.EventsManager;
 import main.java.memoranda.NoteListImpl;
 import main.java.memoranda.ProjectManager;
 import main.java.memoranda.ResourcesListImpl;
 import main.java.memoranda.TaskListImpl;
 import main.java.memoranda.date.CalendarDate;
+import main.java.memoranda.interfaces.Note;
+import main.java.memoranda.interfaces.NoteList;
+import main.java.memoranda.interfaces.Project;
+import main.java.memoranda.interfaces.ResourcesList;
+import main.java.memoranda.interfaces.Storage;
+import main.java.memoranda.interfaces.TaskList;
 import main.java.memoranda.ui.ExceptionDialog;
 import main.java.memoranda.ui.htmleditor.AltHTMLWriter;
 import nu.xom.Builder;
@@ -107,7 +107,7 @@ public class FileStorage implements Storage {
     }
 
     /**
-     * @see interfaces.Storage#storeNote(interfaces.Note)
+     * @see main.java.memoranda.interfaces.Storage#storeNote(main.java.memoranda.interfaces.Note)
      */
     public void storeNote(Note note, javax.swing.text.Document doc) {
         String filename =
@@ -159,7 +159,7 @@ public class FileStorage implements Storage {
 
     }
     /**
-     * @see interfaces.Storage#openNote(interfaces.Note)
+     * @see main.java.memoranda.interfaces.Storage#openNote(main.java.memoranda.interfaces.Note)
      */
     public javax.swing.text.Document openNote(Note note) {
 
@@ -230,7 +230,7 @@ public class FileStorage implements Storage {
     }
 
     /**
-     * @see interfaces.Storage#openProjectManager()
+     * @see main.java.memoranda.interfaces.Storage#openProjectManager()
      */
     public void openProjectManager() {
         if (!new File(JN_DOCPATH + ".projects").exists()) {
@@ -243,7 +243,7 @@ public class FileStorage implements Storage {
         ProjectManager._doc = openDocument(JN_DOCPATH + ".projects");
     }
     /**
-     * @see interfaces.Storage#storeProjectManager(nu.xom.Document)
+     * @see main.java.memoranda.interfaces.Storage#storeProjectManager(nu.xom.Document)
      */
     public void storeProjectManager() {
         /*DEBUG*/
@@ -252,7 +252,7 @@ public class FileStorage implements Storage {
         saveDocument(ProjectManager._doc, JN_DOCPATH + ".projects");
     }
     /**
-     * @see interfaces.Storage#removeProject(interfaces.Project)
+     * @see main.java.memoranda.interfaces.Storage#removeProject(main.java.memoranda.interfaces.Project)
      */
     public void removeProjectStorage(Project prj) {
         String id = prj.getID();
@@ -308,7 +308,7 @@ public class FileStorage implements Storage {
         saveDocument(tasklistDoc,JN_DOCPATH + prj.getID() + File.separator + ".tasklist");
     }
     /**
-     * @see interfaces.Storage#createProjectStorage(interfaces.Project)
+     * @see main.java.memoranda.interfaces.Storage#createProjectStorage(main.java.memoranda.interfaces.Project)
      */
     public void createProjectStorage(Project prj) {
         /*DEBUG*/
@@ -318,7 +318,7 @@ public class FileStorage implements Storage {
         dir.mkdirs();
     }
     /**
-     * @see interfaces.Storage#openNoteList(interfaces.Project)
+     * @see main.java.memoranda.interfaces.Storage#openNoteList(main.java.memoranda.interfaces.Project)
      */
     public NoteList openNoteList(Project prj) {
         String fn = JN_DOCPATH + prj.getID() + File.separator + ".notes";
@@ -340,7 +340,7 @@ public class FileStorage implements Storage {
         }
     }
     /**
-     * @see interfaces.Storage#storeNoteList(interfaces.NoteList, interfaces.Project)
+     * @see main.java.memoranda.interfaces.Storage#storeNoteList(main.java.memoranda.interfaces.NoteList, main.java.memoranda.interfaces.Project)
      */
     public void storeNoteList(NoteList nl, Project prj) {
         /*DEBUG*/
@@ -355,7 +355,7 @@ public class FileStorage implements Storage {
             JN_DOCPATH + prj.getID() + File.separator + ".notes");
     }
     /**
-     * @see interfaces.Storage#openEventsList()
+     * @see main.java.memoranda.interfaces.Storage#openEventsList()
      */
     public void openEventsManager() {
         if (!new File(JN_DOCPATH + ".events").exists()) {
@@ -368,7 +368,7 @@ public class FileStorage implements Storage {
         EventsManager._doc = openDocument(JN_DOCPATH + ".events");
     }
     /**
-     * @see interfaces.Storage#storeEventsList()
+     * @see main.java.memoranda.interfaces.Storage#storeEventsList()
      */
     public void storeEventsManager() {
         /*DEBUG*/
@@ -377,7 +377,7 @@ public class FileStorage implements Storage {
         saveDocument(EventsManager._doc, JN_DOCPATH + ".events");
     }
     /**
-     * @see interfaces.Storage#openMimeTypesList()
+     * @see main.java.memoranda.interfaces.Storage#openMimeTypesList()
      */
     public void openMimeTypesList() {
         if (!new File(JN_DOCPATH + ".mimetypes").exists()) {
@@ -401,7 +401,7 @@ public class FileStorage implements Storage {
         MimeTypesList._doc = openDocument(JN_DOCPATH + ".mimetypes");
     }
     /**
-     * @see interfaces.Storage#storeMimeTypesList()
+     * @see main.java.memoranda.interfaces.Storage#storeMimeTypesList()
      */
     public void storeMimeTypesList() {
         /*DEBUG*/
@@ -410,7 +410,7 @@ public class FileStorage implements Storage {
         saveDocument(MimeTypesList._doc, JN_DOCPATH + ".mimetypes");
     }
     /**
-     * @see interfaces.Storage#openResourcesList(interfaces.Project)
+     * @see main.java.memoranda.interfaces.Storage#openResourcesList(main.java.memoranda.interfaces.Project)
      */
     public ResourcesList openResourcesList(Project prj) {
         String fn = JN_DOCPATH + prj.getID() + File.separator + ".resources";
@@ -426,7 +426,7 @@ public class FileStorage implements Storage {
         }
     }
     /**
-     * @see interfaces.Storage#storeResourcesList(interfaces.ResourcesList, interfaces.Project)
+     * @see main.java.memoranda.interfaces.Storage#storeResourcesList(main.java.memoranda.interfaces.ResourcesList, main.java.memoranda.interfaces.Project)
      */
     public void storeResourcesList(ResourcesList rl, Project prj) {
         /*DEBUG*/
@@ -441,7 +441,7 @@ public class FileStorage implements Storage {
             JN_DOCPATH + prj.getID() + File.separator + ".resources");
     }
     /**
-     * @see interfaces.Storage#restoreContext()
+     * @see main.java.memoranda.interfaces.Storage#restoreContext()
      */
     public void restoreContext() {
         try {
@@ -456,7 +456,7 @@ public class FileStorage implements Storage {
         }
     }
     /**
-     * @see interfaces.Storage#storeContext()
+     * @see main.java.memoranda.interfaces.Storage#storeContext()
      */
     public void storeContext() {
         try {

@@ -1,4 +1,4 @@
-package interfaces;
+package main.java.memoranda.interfaces;
 
 import main.java.memoranda.date.CalendarDate;
 

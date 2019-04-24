@@ -8,9 +8,9 @@
  */
 package main.java.memoranda;
 
-import interfaces.Project;
 import main.java.memoranda.date.CalendarDate;
 import main.java.memoranda.date.CurrentDate;
+import main.java.memoranda.interfaces.Project;
 import nu.xom.Attribute;
 import nu.xom.Element;
 
@@ -30,14 +30,14 @@ public class ProjectImpl implements Project {
     }
 
     /**
-     * @see interfaces.Project#getID()
+     * @see main.java.memoranda.interfaces.Project#getID()
      */
     public String getID() {
         return _root.getAttribute("id").getValue();
     }
 
     /**
-     * @see interfaces.Project#getStartDate()
+     * @see main.java.memoranda.interfaces.Project#getStartDate()
      */
     public CalendarDate getStartDate() {
         Attribute d = _root.getAttribute("startDate");
@@ -46,7 +46,7 @@ public class ProjectImpl implements Project {
     }
 
     /**
-     * @see interfaces.Project#setStartDate(net.sf.memoranda.util.CalendarDate)
+     * @see main.java.memoranda.interfaces.Project#setStartDate(net.sf.memoranda.util.CalendarDate)
      */
     public void setStartDate(CalendarDate date) {
         if (date != null)
@@ -54,7 +54,7 @@ public class ProjectImpl implements Project {
     }
 
     /**
-     * @see interfaces.Project#getEndDate()
+     * @see main.java.memoranda.interfaces.Project#getEndDate()
      */
     public CalendarDate getEndDate() {
         Attribute d = _root.getAttribute("endDate");
@@ -63,7 +63,7 @@ public class ProjectImpl implements Project {
     }
 
     /**
-     * @see interfaces.Project#setEndDate(net.sf.memoranda.util.CalendarDate)
+     * @see main.java.memoranda.interfaces.Project#setEndDate(net.sf.memoranda.util.CalendarDate)
      */
     public void setEndDate(CalendarDate date) {
         if (date != null)
@@ -73,7 +73,7 @@ public class ProjectImpl implements Project {
     }
 
     /**
-     * @see interfaces.Project#getStatus()
+     * @see main.java.memoranda.interfaces.Project#getStatus()
      */
     public int getStatus() {
         if (isFrozen())
@@ -117,14 +117,14 @@ public class ProjectImpl implements Project {
   
     
     /**
-     * @see interfaces.Project#freeze()
+     * @see main.java.memoranda.interfaces.Project#freeze()
      */
     public void freeze() {
         _root.addAttribute(new Attribute("frozen", "yes"));
     }
 
     /**
-     * @see interfaces.Project#unfreeze()
+     * @see main.java.memoranda.interfaces.Project#unfreeze()
      */
     public void unfreeze() {
         if (this.isFrozen())
@@ -132,7 +132,7 @@ public class ProjectImpl implements Project {
     }
     
     /**
-     * @see interfaces.Project#getTitle()
+     * @see main.java.memoranda.interfaces.Project#getTitle()
      */
     public String getTitle() {
         Attribute ta = _root.getAttribute("title");
@@ -141,7 +141,7 @@ public class ProjectImpl implements Project {
         return "";
     }
     /**
-     * @see interfaces.Project#setTitle(java.lang.String)
+     * @see main.java.memoranda.interfaces.Project#setTitle(java.lang.String)
      */
     public void setTitle(String title) {
         setAttr("title", title);

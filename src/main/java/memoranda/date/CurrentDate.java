@@ -10,7 +10,7 @@ package main.java.memoranda.date;
 import java.util.Collection;
 import java.util.Vector;
 
-import interfaces.DateListener;
+import main.java.memoranda.interfaces.DateListener;
 
 /**
  *

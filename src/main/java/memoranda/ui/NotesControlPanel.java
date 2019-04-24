@@ -23,10 +23,10 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import interfaces.Note;
 import main.java.memoranda.CurrentNote;
 import main.java.memoranda.CurrentProject;
 import main.java.memoranda.date.CurrentDate;
+import main.java.memoranda.interfaces.Note;
 import main.java.memoranda.util.Configuration;
 import main.java.memoranda.util.CurrentStorage;
 import main.java.memoranda.util.Local;
