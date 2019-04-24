@@ -18,7 +18,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.tree.TreePath;
 
-import main.java.memoranda.interfaces.TreeTableModel;
+import main.java.memoranda.interfaces.ITreeTableModel;
 
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeExpansionListener;
@@ -39,9 +39,9 @@ import javax.swing.event.TreeModelListener;
 public class TreeTableModelAdapter extends AbstractTableModel
 {
     JTree tree;
-    TreeTableModel treeTableModel;
+    ITreeTableModel treeTableModel;
 
-    public TreeTableModelAdapter(TreeTableModel treeTableModel, JTree tree) {
+    public TreeTableModelAdapter(ITreeTableModel treeTableModel, JTree tree) {
         this.tree = tree;
         this.treeTableModel = treeTableModel;
 

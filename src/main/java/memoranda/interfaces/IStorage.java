@@ -12,19 +12,19 @@ package main.java.memoranda.interfaces;
  * 
  */
 /*$Id: Storage.java,v 1.4 2004/01/30 12:17:42 alexeya Exp $*/
-public interface Storage {
+public interface IStorage {
             
-    TaskList openTaskList(Project prj);    
-    void storeTaskList(TaskList tl, Project prj);
+    ITaskList openTaskList(IProject prj);    
+    void storeTaskList(ITaskList tl, IProject prj);
     
-    NoteList openNoteList(Project prj);
-    void storeNoteList(NoteList nl, Project prj);
+    INoteList openNoteList(IProject prj);
+    void storeNoteList(INoteList nl, IProject prj);
     
-    void storeNote(Note note, javax.swing.text.Document doc);    
-    javax.swing.text.Document openNote(Note note);
-    void removeNote(Note note);
+    void storeNote(INote note, javax.swing.text.Document doc);    
+    javax.swing.text.Document openNote(INote note);
+    void removeNote(INote note);
     
-    String getNoteURL(Note note);
+    String getNoteURL(INote note);
     
     void openProjectManager();    
     void storeProjectManager();
@@ -35,11 +35,11 @@ public interface Storage {
     void openMimeTypesList();
     void storeMimeTypesList();
     
-    void createProjectStorage(Project prj);
-    void removeProjectStorage(Project prj);
+    void createProjectStorage(IProject prj);
+    void removeProjectStorage(IProject prj);
    
-    ResourcesList openResourcesList(Project prj);
-    void storeResourcesList(ResourcesList rl, Project prj);
+    IResourcesList openResourcesList(IProject prj);
+    void storeResourcesList(IResourcesList rl, IProject prj);
     
     void restoreContext();
     void storeContext(); 

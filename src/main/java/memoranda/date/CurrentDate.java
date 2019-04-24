@@ -10,7 +10,7 @@ package main.java.memoranda.date;
 import java.util.Collection;
 import java.util.Vector;
 
-import main.java.memoranda.interfaces.DateListener;
+import main.java.memoranda.interfaces.IDateListener;
 
 /**
  *
@@ -35,7 +35,7 @@ public class CurrentDate {
         set(new CalendarDate());
     }
 
-    public static void addDateListener(DateListener dl) {
+    public static void addDateListener(IDateListener dl) {
         dateListeners.add(dl);
     }
 
@@ -45,6 +45,6 @@ public class CurrentDate {
 
     private static void dateChanged(CalendarDate date) {
         for (int i = 0; i < dateListeners.size(); i++)
-            ((DateListener)dateListeners.get(i)).dateChange(date);
+            ((IDateListener)dateListeners.get(i)).dateChange(date);
     }
 }
