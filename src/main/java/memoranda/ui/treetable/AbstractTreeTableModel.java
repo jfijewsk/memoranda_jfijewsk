@@ -14,6 +14,9 @@ package main.java.memoranda.ui.treetable;
  */
 
 import javax.swing.tree.*;
+
+import interfaces.TreeTableModel;
+
 import javax.swing.event.*;
  
 /**

@@ -13,10 +13,15 @@ import java.awt.event.ActionListener;
 import java.util.Collection;
 import java.util.Vector;
 
+import interfaces.NoteList;
+import interfaces.Project;
+import interfaces.ProjectListener;
+import interfaces.ResourcesList;
+import interfaces.Storage;
+import interfaces.TaskList;
 import main.java.memoranda.ui.AppFrame;
 import main.java.memoranda.util.Context;
 import main.java.memoranda.util.CurrentStorage;
-import main.java.memoranda.util.Storage;
 
 /**
  *

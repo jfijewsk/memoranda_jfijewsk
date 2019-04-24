@@ -8,6 +8,8 @@
  */
 package main.java.memoranda;
 
+import interfaces.Note;
+import interfaces.Project;
 import main.java.memoranda.date.CalendarDate;
 
 /**

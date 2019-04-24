@@ -11,6 +11,9 @@ package main.java.memoranda;
 import java.util.Collection;
 import java.util.Vector;
 
+import interfaces.Project;
+import interfaces.Task;
+import interfaces.TaskList;
 import main.java.memoranda.date.CalendarDate;
 import main.java.memoranda.date.CurrentDate;
 
@@ -133,7 +136,7 @@ public class TaskImpl implements Task, Comparable {
     }
 
     /**s
-     * @see main.java.memoranda.Task#getStatus()
+     * @see interfaces.Task#getStatus()
      */
     public int getStatus(CalendarDate date) {
         CalendarDate start = getStartDate();
@@ -184,14 +187,14 @@ public class TaskImpl implements Task, Comparable {
     }
 
     /**
-     * @see main.java.memoranda.Task#getID()
+     * @see interfaces.Task#getID()
      */
     public String getID() {
         return _element.getAttribute("id").getValue();
     }
 
     /**
-     * @see main.java.memoranda.Task#getText()
+     * @see interfaces.Task#getText()
      */
     public String getText() {
         return _element.getFirstChildElement("text").getValue();
@@ -202,7 +205,7 @@ public class TaskImpl implements Task, Comparable {
     }
     
     /**
-     * @see main.java.memoranda.Task#setText()
+     * @see interfaces.Task#setText()
      */
     public void setText(String s) {
         _element.getFirstChildElement("text").removeChildren();
@@ -210,14 +213,14 @@ public class TaskImpl implements Task, Comparable {
     }
 
     /**
-     * @see main.java.memoranda.Task#freeze()
+     * @see interfaces.Task#freeze()
      */
     public void freeze() {
         setAttr("frozen", "yes");
     }
 
     /**
-     * @see main.java.memoranda.Task#unfreeze()
+     * @see interfaces.Task#unfreeze()
      */
     public void unfreeze() {
         if (this.isFrozen())
@@ -225,7 +228,7 @@ public class TaskImpl implements Task, Comparable {
     }
 
     /**
-     * @see main.java.memoranda.Task#getDependsFrom()
+     * @see interfaces.Task#getDependsFrom()
      */
     public Collection getDependsFrom() {
         Vector v = new Vector();
@@ -239,7 +242,7 @@ public class TaskImpl implements Task, Comparable {
         return v;
     }
     /**
-     * @see main.java.memoranda.Task#addDependsFrom(main.java.memoranda.Task)
+     * @see interfaces.Task#addDependsFrom(interfaces.Task)
      */
     public void addDependsFrom(Task task) {
         Element dep = new Element("dependsFrom");
@@ -247,7 +250,7 @@ public class TaskImpl implements Task, Comparable {
         _element.appendChild(dep);
     }
     /**
-     * @see main.java.memoranda.Task#removeDependsFrom(main.java.memoranda.Task)
+     * @see interfaces.Task#removeDependsFrom(interfaces.Task)
      */
     public void removeDependsFrom(Task task) {
         Elements deps = _element.getChildElements("dependsFrom");
@@ -260,20 +263,20 @@ public class TaskImpl implements Task, Comparable {
         }
     }
     /**
-     * @see main.java.memoranda.Task#getProgress()
+     * @see interfaces.Task#getProgress()
      */
     public int getProgress() {
         return new Integer(_element.getAttribute("progress").getValue()).intValue();
     }
     /**
-     * @see main.java.memoranda.Task#setProgress(int)
+     * @see interfaces.Task#setProgress(int)
      */
     public void setProgress(int p) {
         if ((p >= 0) && (p <= 100))
             setAttr("progress", new Integer(p).toString());
     }
     /**
-     * @see main.java.memoranda.Task#getPriority()
+     * @see interfaces.Task#getPriority()
      */
     public int getPriority() {
         Attribute pa = _element.getAttribute("priority");
@@ -282,7 +285,7 @@ public class TaskImpl implements Task, Comparable {
         return new Integer(pa.getValue()).intValue();
     }
     /**
-     * @see main.java.memoranda.Task#setPriority(int)
+     * @see interfaces.Task#setPriority(int)
      */
     public void setPriority(int p) {
         setAttr("priority", String.valueOf(p));
@@ -316,7 +319,7 @@ public class TaskImpl implements Task, Comparable {
 	}
 
     /**
-     * @see main.java.memoranda.Task#getRate()
+     * @see interfaces.Task#getRate()
      */
 	 
      public long getRate() {

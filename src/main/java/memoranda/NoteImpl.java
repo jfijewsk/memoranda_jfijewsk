@@ -8,6 +8,8 @@
  */
 package main.java.memoranda;
 
+import interfaces.Note;
+import interfaces.Project;
 import main.java.memoranda.date.CalendarDate;
 import nu.xom.Attribute;
 import nu.xom.Element;
@@ -30,7 +32,7 @@ public class NoteImpl implements Note, Comparable {
     }
 
     /**
-     * @see main.java.memoranda.Note#getDate()
+     * @see interfaces.Note#getDate()
      */
     public CalendarDate getDate() {
 		Element day = (Element)_el.getParent();
@@ -49,7 +51,7 @@ public class NoteImpl implements Note, Comparable {
         return _project;
     }
     /**
-     * @see main.java.memoranda.Note#getTitle()
+     * @see interfaces.Note#getTitle()
      */
     public String getTitle() {
         Attribute ta = _el.getAttribute("title");
@@ -57,7 +59,7 @@ public class NoteImpl implements Note, Comparable {
         return _el.getAttribute("title").getValue();
     }
     /**
-     * @see main.java.memoranda.Note#setTitle(java.lang.String)
+     * @see interfaces.Note#setTitle(java.lang.String)
      */
     public void setTitle(String s) {
         Attribute ta = _el.getAttribute("title");
@@ -67,7 +69,7 @@ public class NoteImpl implements Note, Comparable {
     }
 	
 	/**
-     * @see main.java.memoranda.Note#getId
+     * @see interfaces.Note#getId
      */
 	
 	public String getId() {
@@ -77,7 +79,7 @@ public class NoteImpl implements Note, Comparable {
 	}
 	
 	/**
-     * @see main.java.memoranda.Note#setId(java.lang.String)
+     * @see interfaces.Note#setId(java.lang.String)
      */
 	 
 	public void setId(String s) {
@@ -85,13 +87,13 @@ public class NoteImpl implements Note, Comparable {
 		if(id==null) _el.addAttribute(new Attribute("refid", s));
 	}
     /**
-     * @see main.java.memoranda.Note#isMarked()
+     * @see interfaces.Note#isMarked()
      */
     public boolean isMarked() {
         return _el.getAttribute("bookmark") != null;        
     }
     /**
-     * @see main.java.memoranda.Note#setMark(boolean)
+     * @see interfaces.Note#setMark(boolean)
      */
     public void setMark(boolean mark) {
         Attribute ma = _el.getAttribute("bookmark");        

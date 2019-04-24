@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.table.*;
 
+import interfaces.Task;
 import main.java.memoranda.*;
 import main.java.memoranda.util.*;
 

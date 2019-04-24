@@ -11,6 +11,9 @@ import java.util.Collections;
 
 import javax.swing.text.html.HTMLDocument;
 
+import interfaces.Note;
+import interfaces.NoteList;
+import interfaces.Project;
 import main.java.memoranda.*;
 import main.java.memoranda.date.CalendarDate;
 import main.java.memoranda.ui.*;

@@ -13,6 +13,9 @@ import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Vector;
 
+import interfaces.Project;
+import interfaces.Task;
+import interfaces.TaskList;
 import main.java.memoranda.date.CalendarDate;
 import main.java.memoranda.util.Util;
 import nu.xom.Attribute;
@@ -187,7 +190,7 @@ public class TaskListImpl implements TaskList {
     }
 
     /**
-     * @see main.java.memoranda.TaskList#getXMLContent()
+     * @see interfaces.TaskList#getXMLContent()
      */	 
     public Document getXMLContent() {
         return _doc;

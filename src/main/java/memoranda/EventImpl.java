@@ -12,6 +12,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import interfaces.Event;
 import main.java.memoranda.date.CalendarDate;
 import main.java.memoranda.util.Local;
 import nu.xom.Attribute;
@@ -34,14 +35,14 @@ public class EventImpl implements Event, Comparable {
 
    
     /**
-     * @see main.java.memoranda.Event#getHour()
+     * @see interfaces.Event#getHour()
      */
     public int getHour() {
         return new Integer(_elem.getAttribute("hour").getValue()).intValue();
     }
 
     /**
-     * @see main.java.memoranda.Event#getMinute()
+     * @see interfaces.Event#getMinute()
      */
     public int getMinute() {
         return new Integer(_elem.getAttribute("min").getValue()).intValue();
@@ -53,26 +54,26 @@ public class EventImpl implements Event, Comparable {
         
   
     /**
-     * @see main.java.memoranda.Event#getText()
+     * @see interfaces.Event#getText()
      */
     public String getText() {
         return _elem.getValue();
     }
 
     /**
-     * @see main.java.memoranda.Event#getContent()
+     * @see interfaces.Event#getContent()
      */
     public Element getContent() {
         return _elem;
     }
     /**
-     * @see main.java.memoranda.Event#isRepeatable()
+     * @see interfaces.Event#isRepeatable()
      */
     public boolean isRepeatable() {
         return getStartDate() != null;
     }
     /**
-     * @see main.java.memoranda.Event#getStartDate()
+     * @see interfaces.Event#getStartDate()
      */
     public CalendarDate getStartDate() {
         Attribute a = _elem.getAttribute("startDate");
@@ -80,7 +81,7 @@ public class EventImpl implements Event, Comparable {
         return null;
     }
     /**
-     * @see main.java.memoranda.Event#getEndDate()
+     * @see interfaces.Event#getEndDate()
      */
     public CalendarDate getEndDate() {
         Attribute a = _elem.getAttribute("endDate");
@@ -88,7 +89,7 @@ public class EventImpl implements Event, Comparable {
         return null;
     }
     /**
-     * @see main.java.memoranda.Event#getPeriod()
+     * @see interfaces.Event#getPeriod()
      */
     public int getPeriod() {
         Attribute a = _elem.getAttribute("period");
@@ -96,7 +97,7 @@ public class EventImpl implements Event, Comparable {
         return 0;
     }
     /**
-     * @see main.java.memoranda.Event#getId()
+     * @see interfaces.Event#getId()
      */
     public String getId() {
         Attribute a = _elem.getAttribute("id");
@@ -104,7 +105,7 @@ public class EventImpl implements Event, Comparable {
         return null;
     }
     /**
-     * @see main.java.memoranda.Event#getRepeat()
+     * @see interfaces.Event#getRepeat()
      */
     public int getRepeat() {
         Attribute a = _elem.getAttribute("repeat-type");
@@ -112,7 +113,7 @@ public class EventImpl implements Event, Comparable {
         return 0;
     }
     /**
-     * @see main.java.memoranda.Event#getTime()
+     * @see interfaces.Event#getTime()
      */
     public Date getTime() {
     	//Deprecated methods
@@ -133,7 +134,7 @@ public class EventImpl implements Event, Comparable {
     }
 	
 	/**
-     * @see main.java.memoranda.Event#getWorkinDays()
+     * @see interfaces.Event#getWorkinDays()
      */
 	public boolean getWorkingDays() {
         Attribute a = _elem.getAttribute("workingDays");
