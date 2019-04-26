@@ -1543,6 +1543,7 @@ public class AltHTMLWriter extends AbstractWriter {
             return (i >= a) && (i <= b);
         }
 
+        // TASK 3-1 SMELL WITHIN A CLASS
         private void changeSelection(int clearMin, int clearMax, int setMin, int setMax, boolean clearFirst) {
             for (int i = Math.min(setMin, clearMin); i <= Math.max(setMax, clearMax); i++) {
 
