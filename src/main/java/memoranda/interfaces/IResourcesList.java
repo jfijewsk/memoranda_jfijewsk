@@ -6,7 +6,7 @@
  * @author Alex V. Alishevskikh, alex@openmechanics.net
  * Copyright (c) 2003 Memoranda Team. http://memoranda.sf.net
  */
-package interfaces;
+package main.java.memoranda.interfaces;
 
 import java.util.Vector;
 
@@ -16,7 +16,7 @@ import nu.xom.Document;
  * 
  */
 /*$Id: ResourcesList.java,v 1.4 2007/03/20 06:21:46 alexeya Exp $*/
-public interface ResourcesList {
+public interface IResourcesList {
     
     Vector getAllResources();
     
