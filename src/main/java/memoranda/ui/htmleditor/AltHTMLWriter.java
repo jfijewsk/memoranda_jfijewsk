@@ -1568,14 +1568,6 @@ public class AltHTMLWriter extends AbstractWriter {
             fireValueChanged();
         }
 
-        /*   Change the selection with the effect of first clearing the values
-         *   in the inclusive range [clearMin, clearMax] then setting the values
-         *   in the inclusive range [setMin, setMax]. Do this in one pass so
-         *   that no values are cleared if they would later be set.
-         */
-        private void changeSelection(int clearMin, int clearMax, int setMin, int setMax) {
-            changeSelection(clearMin, clearMax, setMin, setMax, true);
-        }
 
         public void clearSelection() {
             removeSelectionInterval(minIndex, maxIndex);
@@ -1596,7 +1588,7 @@ public class AltHTMLWriter extends AbstractWriter {
             int clearMax = maxIndex;
             int setMin = Math.min(index0, index1);
             int setMax = Math.max(index0, index1);
-            changeSelection(clearMin, clearMax, setMin, setMax);
+            changeSelection(clearMin, clearMax, setMin, setMax, true);
         }
 
         public void addSelectionInterval(int index0, int index1) {
@@ -1615,7 +1607,7 @@ public class AltHTMLWriter extends AbstractWriter {
             int clearMax = MIN;
             int setMin = Math.min(index0, index1);
             int setMax = Math.max(index0, index1);
-            changeSelection(clearMin, clearMax, setMin, setMax);
+            changeSelection(clearMin, clearMax, setMin, setMax, true);
         }
 
         public void removeSelectionInterval(int index0, int index1) {
@@ -1629,7 +1621,7 @@ public class AltHTMLWriter extends AbstractWriter {
             int clearMax = Math.max(index0, index1);
             int setMin = MAX;
             int setMax = MIN;
-            changeSelection(clearMin, clearMax, setMin, setMax);
+            changeSelection(clearMin, clearMax, setMin, setMax, true);
         }
 
         private void setState(int index, boolean state) {
@@ -1776,7 +1768,7 @@ public class AltHTMLWriter extends AbstractWriter {
             int newMin = Math.min(anchorIndex, leadIndex);
             int newMax = Math.max(anchorIndex, leadIndex);
             if (value.get(this.anchorIndex)) {
-                changeSelection(oldMin, oldMax, newMin, newMax);
+                changeSelection(oldMin, oldMax, newMin, newMax, true);
             }
             else {
                 changeSelection(newMin, newMax, oldMin, oldMax, false);
