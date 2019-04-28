@@ -1544,6 +1544,9 @@ public class AltHTMLWriter extends AbstractWriter {
         }
 
         // TASK 3-1 SMELL WITHIN A CLASS
+        // Found duplicate code within a helper method that just called this method.
+        // Removed the redundant method and changed all calls to that method to work with the
+        // beow method.
         private void changeSelection(int clearMin, int clearMax, int setMin, int setMax, boolean clearFirst) {
             for (int i = Math.min(setMin, clearMin); i <= Math.max(setMax, clearMax); i++) {
 
